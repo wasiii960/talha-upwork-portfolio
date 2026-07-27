@@ -330,7 +330,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "onezapp-enterprise-digital-wallet-platform",
     title: "OneZapp — Enterprise Digital Wallet & Payment Platform",
-    industry: "FinTech / Digital Wallet & Payments",
+    industry: "FinTech",
     timeframe: "11 months",
     teamSize: "6 engineers (backend contributor)",
     tagline:
@@ -453,7 +453,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "oneload-digital-financial-services-platform",
     title: "OneLoad — Digital Financial Services & eLoad Platform",
-    industry: "FinTech / Digital Financial Services",
+    industry: "FinTech",
     timeframe: "10 months",
     teamSize: "4 engineers (backend contributor)",
     tagline:
