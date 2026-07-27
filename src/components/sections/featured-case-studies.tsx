@@ -7,7 +7,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 
 export function FeaturedCaseStudies() {
-  const featured = caseStudies.slice(0, 6);
+  const featured = caseStudies;
 
   return (
     <section className="relative py-28 sm:py-32">

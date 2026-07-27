@@ -451,6 +451,106 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
+    slug: "oneload-digital-financial-services-platform",
+    title: "OneLoad — Digital Financial Services & eLoad Platform",
+    industry: "FinTech / Digital Financial Services",
+    timeframe: "10 months",
+    teamSize: "4 engineers (backend contributor)",
+    tagline:
+      "A digital financial services platform unifying mobile top-ups (eLoad), loan disbursement, and multi-provider payments — with automated package management that eliminated redeploys for pricing changes.",
+    technologies: ["Java", "Spring Boot", "Spring Security", "PostgreSQL", "Redis", "REST APIs"],
+    accent: "from-violet-500/20 via-purple-400/10 to-transparent",
+    heroImage: "/case-studies/oneload-digital-financial-services-platform.jpg",
+    executiveSummary:
+      "OneLoad is a digital financial services platform providing electronic mobile top-ups (eLoad), digital payments, and loan integrations through a single backend. As backend software engineer on the platform, I integrated three external financial providers — KUUNDA Easy-Cash Loan, Easypaisa Magic Box, and the PayFast Payment Gateway — and automated package management so pricing changes no longer required a production deployment.",
+    businessProblem:
+      "The platform needed to combine mobile top-ups, loan disbursement, and payments from multiple external financial providers into one reliable backend, without any single integration becoming an operational bottleneck. Package and pricing updates for eLoad bundles required a full production deployment every time, slowing down routine business changes and adding unnecessary engineering overhead to non-engineering decisions.",
+    challenges: [
+      "Each external financial provider (KUUNDA Easy-Cash Loan, Easypaisa Magic Box, PayFast, mobile network operators) had a different authentication scheme, transaction lifecycle, and settlement process to integrate against.",
+      "The loan integration required a relational schema capable of tracking a loan's full lifecycle — requested, disbursed, active, repaid — not just mirroring the external API's response shape.",
+      "Every eLoad package price change or new bundle required a full backend deployment, creating operational overhead and slowing time-to-market for routine pricing decisions.",
+      "The platform needed to stay secure and auditable across payment, loan, and top-up flows spanning multiple third-party financial providers.",
+    ],
+    solution:
+      "I integrated each external financial provider behind its own isolated REST client and adapter, kept the relational schema modeled around the loan lifecycle rather than any single provider's API shape, and replaced hardcoded package pricing with a database-backed configuration layer that operations staff can update without engineering involvement. Every integration was documented in a full Technical Design Document adopted by the wider engineering team.",
+    diagram: "integration",
+    diagramLayers: [
+      { label: "Client Applications", nodes: ["Mobile App", "Web App", "Third-Party Apps"] },
+      { label: "Gateway & Auth", nodes: ["API Gateway", "Authentication Service (JWT)"] },
+      { label: "Core Services", nodes: ["User Service", "Payment Service", "Loan Service", "Package Service", "Notification Service", "Reporting Service"] },
+      { label: "External Financial APIs", nodes: ["KUUNDA Easy-Cash Loan", "Easypaisa Magic Box", "PayFast Payment Gateway", "Mobile Network Operators"] },
+    ],
+    architectureNotes: [
+      "An API gateway routes all inbound traffic to backend services, with JWT-based authentication enforced via Spring Security before a request reaches any downstream service.",
+      "Each capability — users, payments, loans, packages, notifications, reporting — is implemented as an independently maintainable Spring Boot service, sharing a PostgreSQL-backed relational schema designed specifically around the loan integration lifecycle.",
+      "Redis caches frequently accessed package/pricing configuration and token validation, keeping the hot path fast across payment and top-up flows.",
+      "Package pricing and bundle configuration were externalized from application code into a database-backed, admin-editable configuration layer, removing the need for a production deployment on every pricing change.",
+      "Each external integration is isolated behind its own REST client and adapter, so a provider-specific API change or outage cannot cascade into unrelated services.",
+      "Docker-based builds and Git-based version control underpin a repeatable deployment process across environments.",
+    ],
+    techStack: [
+      { category: "Languages", items: ["Java"] },
+      { category: "Frameworks", items: ["Spring Boot", "Spring Security"] },
+      { category: "Data", items: ["PostgreSQL", "Redis"] },
+      { category: "Integration", items: ["REST APIs", "JWT", "External financial provider REST clients"] },
+      { category: "Infrastructure", items: ["Docker", "Git"] },
+      { category: "Quality", items: ["JUnit", "Mockito"] },
+    ],
+    role: [
+      "Integrated KUUNDA Easy-Cash Loan across roughly 9 REST APIs, including designing the relational database schema required for the loan integration.",
+      "Authored the complete Technical Design Document describing the KUUNDA integration workflow end-to-end for the wider engineering team.",
+      "Designed the Easypaisa Magic Box integration flow, covering authentication, transaction lifecycle, and settlement process.",
+      "Integrated the PayFast Payment Gateway, expanding available payment options and contributing to roughly 20% growth in the platform's user base.",
+      "Automated eLoad package management, removing the need for a production deployment whenever package prices or bundles changed.",
+      "Produced technical documentation covering integration architecture, deployment flow, and operational automation for internal engineering reference.",
+    ],
+    engineeringDecisions: [
+      {
+        title: "Isolated adapters per external financial provider",
+        detail:
+          "Each provider was integrated behind its own dedicated REST client and adapter rather than a shared generic 'payment provider' abstraction. Every provider had different authentication schemes, transaction lifecycles, and settlement semantics — forcing a shared abstraction too early would have leaked provider-specific quirks into the core domain model.",
+      },
+      {
+        title: "Config-driven package management over code-based pricing",
+        detail:
+          "Package prices and bundle definitions moved out of application code into an admin-editable, database-backed configuration layer. This was a deliberate trade-off: a small amount of schema and validation complexity up front, in exchange for eliminating a recurring production deployment every time the business wanted to change a price or add a bundle.",
+      },
+      {
+        title: "Schema designed around the loan lifecycle, not the API response shape",
+        detail:
+          "Rather than mirroring the loan provider's API response structure directly in the database, the schema was modeled around the actual lifecycle of a loan (requested, disbursed, active, repaid), so the same schema could support additional lenders later without a redesign.",
+      },
+      {
+        title: "Stateless JWT authentication across services",
+        detail:
+          "Spring Security with JWT was chosen over server-side session state so authentication could scale horizontally across services without a shared session store becoming a bottleneck or single point of failure.",
+      },
+    ],
+    implementation: [
+      "Built the KUUNDA Easy-Cash Loan integration across roughly 9 REST endpoints, including request/response mapping, error handling, and retry logic for transient provider failures.",
+      "Implemented the Easypaisa Magic Box authentication and transaction lifecycle, including settlement reconciliation against provider callbacks.",
+      "Integrated PayFast's payment gateway APIs, handling card payments, bank transfers, and online checkout flows end-to-end.",
+      "Replaced hardcoded package/pricing logic with a configuration-driven service, validated with unit and integration tests, so operations staff could update offers without engineering involvement.",
+      "Wrote JUnit and Mockito test suites covering payment, loan, and package service logic, with particular focus on external API failure and retry paths.",
+      "Used Docker to containerize services for consistent builds across environments, with Git-based version control underpinning the release process.",
+    ],
+    performance: [
+      { metric: "Time to change eLoad package pricing", before: "Full deployment required", after: "Immediate, self-service via admin config" },
+      { metric: "External financial providers integrated", before: "0", after: "3 providers + mobile network operators" },
+      { metric: "Payment option coverage", before: "Single payment method", after: "Cards, bank transfer, digital wallet, eLoad" },
+    ],
+    results: [
+      { label: "User growth after payment gateway integration", value: "~20%", description: "Additional payment options directly contributed to platform user growth" },
+      { label: "External REST APIs integrated", value: "9+", description: "Loan disbursement integration alone" },
+      { label: "Deployment dependency removed", value: "100%", description: "Package/pricing changes no longer require a backend deployment" },
+    ],
+    lessonsLearned: [
+      "Isolating each external financial integration behind its own adapter made onboarding new providers additive instead of disruptive to existing ones.",
+      "Externalizing pricing and package configuration turned a recurring engineering bottleneck into a self-service operational capability — a small schema investment with an outsized reduction in operational overhead.",
+      "Writing a thorough Technical Design Document before implementation paid off most during the loan integration, where the lifecycle had more edge cases than the API documentation initially suggested.",
+    ],
+  },
+  {
     slug: "cloud-migration-platform",
     title: "Cloud Migration Platform",
     industry: "Enterprise SaaS",

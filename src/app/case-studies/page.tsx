@@ -19,7 +19,7 @@ export default function CaseStudiesPage() {
             Engineering Case Studies
           </h1>
           <p className="mt-4 text-balance text-muted">
-            Six anonymised deep-dives into enterprise systems — the business problem, the
+            Anonymised deep-dives into enterprise systems — the business problem, the
             architecture, the engineering decisions, and the measurable outcome.
           </p>
         </Reveal>
