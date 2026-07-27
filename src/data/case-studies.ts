@@ -512,7 +512,8 @@ export const caseStudies: CaseStudy[] = [
     tagline:
       "A purpose-built API gateway handling authentication, rate limiting, and request routing for 200+ downstream services at sub-10ms overhead.",
     technologies: ["Java", "Spring Boot", "Redis", "Kubernetes", "REST APIs", "PostgreSQL"],
-    accent: "from-rose-500/20 via-pink-400/10 to-transparent",
+    accent: "from-indigo-500/20 via-blue-400/10 to-transparent",
+    heroImage: "/case-studies/high-performance-rest-api-gateway.jpg",
     executiveSummary:
       "A multi-tenant B2B platform's off-the-shelf API gateway couldn't scale with its growing partner ecosystem, adding hundreds of milliseconds of latency and struggling with per-tenant rate-limiting requirements. I designed and built a custom high-performance API gateway in Java, cutting gateway overhead by over 90% while adding fine-grained, tenant-aware traffic control.",
     businessProblem:
