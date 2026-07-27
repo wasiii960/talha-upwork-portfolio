@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -126,8 +127,19 @@ export default async function CaseStudyPage({
           </Reveal>
 
           <Reveal delay={0.25}>
-            <div className={`relative mt-12 h-64 overflow-hidden rounded-2xl border border-border-strong bg-gradient-to-br sm:h-80 ${study.accent}`}>
-              <DiagramThumbnail variant={study.diagram} />
+            <div className={`relative mt-12 h-64 overflow-hidden rounded-2xl border border-border-strong bg-gradient-to-br sm:h-96 ${study.accent}`}>
+              {study.heroImage ? (
+                <Image
+                  src={study.heroImage}
+                  alt={`${study.title} product screenshot`}
+                  fill
+                  priority
+                  className="object-cover object-top"
+                  sizes="(min-width: 1024px) 896px, 100vw"
+                />
+              ) : (
+                <DiagramThumbnail variant={study.diagram} />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
             </div>
           </Reveal>

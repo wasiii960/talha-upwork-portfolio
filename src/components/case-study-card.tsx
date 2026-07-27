@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -21,7 +22,17 @@ export function CaseStudyCard({ study, index = 0 }: { study: CaseStudy; index?: 
         className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface/60 transition-all duration-300 hover:-translate-y-1.5 hover:border-border-strong hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]"
       >
         <div className={`relative h-44 overflow-hidden border-b border-border bg-gradient-to-br ${study.accent}`}>
-          <DiagramThumbnail variant={study.diagram} />
+          {study.heroImage ? (
+            <Image
+              src={study.heroImage}
+              alt=""
+              fill
+              className="object-cover object-left-top transition-transform duration-500 group-hover:scale-105"
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            />
+          ) : (
+            <DiagramThumbnail variant={study.diagram} />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80" />
         </div>
 

@@ -34,6 +34,7 @@ export type CaseStudy = {
   tagline: string;
   technologies: string[];
   accent: string;
+  heroImage?: string;
   executiveSummary: string;
   businessProblem: string;
   challenges: string[];
@@ -61,6 +62,7 @@ export const caseStudies: CaseStudy[] = [
       "An HL7v2 & FHIR interoperability engine that unified patient data across 40+ disparate hospital systems in real time.",
     technologies: ["Java 17", "Spring Boot", "Apache Kafka", "HL7/FHIR", "PostgreSQL", "Kubernetes"],
     accent: "from-blue-500/20 via-sky-400/10 to-transparent",
+    heroImage: "/case-studies/healthcare-data-integration-platform.jpg",
     executiveSummary:
       "A multi-facility healthcare network needed to consolidate patient records, lab results, and admission events scattered across dozens of legacy hospital information systems. I led backend architecture and delivery of an integration engine that normalizes HL7v2 and FHIR messages into a canonical patient model, enabling real-time interoperability across the network while meeting strict compliance requirements for healthcare data handling.",
     businessProblem:
