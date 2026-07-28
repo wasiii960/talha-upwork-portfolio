@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 
-import { siteConfig } from "@/lib/site";
-
 export async function POST(request: Request) {
   const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
 
@@ -35,16 +33,19 @@ export async function POST(request: Request) {
     body: JSON.stringify({
       access_key: accessKey,
       subject: `New project inquiry from ${name}`,
-      from_name: name,
+      name,
       email,
       message,
-      to: siteConfig.email,
     }),
   });
 
-  const result = await response.json().catch(() => ({ success: false }));
+  const result = await response.json().catch(() => ({ success: false, message: "Non-JSON response from Web3Forms" }));
 
   if (!response.ok || !result.success) {
+    console.error("Web3Forms submission failed", {
+      status: response.status,
+      result,
+    });
     return NextResponse.json(
       { success: false, message: "Failed to send message. Please try again." },
       { status: 502 }
