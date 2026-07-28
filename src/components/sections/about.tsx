@@ -36,7 +36,10 @@ export function About() {
               <div className="absolute inset-0 bg-grid opacity-40" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="flex size-28 items-center justify-center rounded-full border border-border-strong bg-white/5 text-4xl font-semibold text-muted">
-                  TA
+                  {siteConfig.name
+                    .split(" ")
+                    .map((part) => part[0])
+                    .join("")}
                 </div>
               </div>
               <div className="absolute bottom-0 left-0 right-0 border-t border-border bg-surface/80 p-5 backdrop-blur-sm">

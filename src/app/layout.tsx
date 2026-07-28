@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
@@ -91,6 +92,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <TooltipProvider>
+          <NextTopLoader color="#3b82f6" height={2.5} showSpinner={false} shadow="0 0 10px #3b82f6,0 0 5px #3b82f6" />
           <ScrollProgress />
           <Navbar />
           <CommandPalette />

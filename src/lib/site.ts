@@ -1,17 +1,17 @@
 export const siteConfig = {
-  name: "Talha Anjum",
+  name: "Talha Rehman Khan",
   role: "Senior Java Backend Engineer",
-  title: "Talha Anjum — Enterprise Java Backend Engineer",
+  title: "Talha Rehman Khan — Enterprise Java Backend Engineer",
   description:
     "Senior Java backend engineer specializing in scalable healthcare systems, enterprise integrations, REST APIs, distributed systems, and cloud-ready architectures.",
-  url: "https://talhaanjum.dev",
-  email: "hello@talhaanjum.dev",
+  url: "https://talharehmankhan.dev",
+  email: "talharehman01997@gmail.com",
   location: "Remote — Available Worldwide",
   yearsExperience: 9,
   social: {
-    linkedin: "https://www.linkedin.com/in/talha-anjum",
-    github: "https://github.com/talha-anjum",
-    upwork: "https://www.upwork.com/freelancers/talhaanjum",
+    linkedin: "https://www.linkedin.com/in/talha-rehman-khan",
+    github: "https://github.com/talha-rehman-khan",
+    upwork: "https://www.upwork.com/freelancers/talharehmankhan",
   },
   resumeUrl: "/resume.pdf",
 } as const;
