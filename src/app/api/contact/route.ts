@@ -27,9 +27,18 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true });
   }
 
+  const origin = request.headers.get("origin") ?? `https://${request.headers.get("host") ?? "localhost"}`;
+
   const response = await fetch("https://api.web3forms.com/submit", {
     method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      "User-Agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+      Origin: origin,
+      Referer: origin,
+    },
     body: JSON.stringify({
       access_key: accessKey,
       subject: `New project inquiry from ${name}`,
@@ -39,12 +48,18 @@ export async function POST(request: Request) {
     }),
   });
 
-  const result = await response.json().catch(() => ({ success: false, message: "Non-JSON response from Web3Forms" }));
+  const responseText = await response.text();
+  let result: { success?: boolean; message?: string };
+  try {
+    result = JSON.parse(responseText);
+  } catch {
+    result = { success: false, message: "Non-JSON response from Web3Forms" };
+  }
 
   if (!response.ok || !result.success) {
     console.error("Web3Forms submission failed", {
       status: response.status,
-      result,
+      body: responseText.slice(0, 500),
     });
     return NextResponse.json(
       { success: false, message: "Failed to send message. Please try again." },
