@@ -43,17 +43,20 @@ names, logos, or confidential details are included, per the site's stated policy
 
 ## Contact Form
 
-The contact form (`src/components/sections/contact.tsx`) posts to `/api/contact`
-(`src/app/api/contact/route.ts`), which forwards the submission via
-[Web3Forms](https://web3forms.com) — free, no account required.
+The contact form (`src/components/sections/contact.tsx`) submits directly from the
+visitor's browser to [Web3Forms](https://web3forms.com) — free, no account required.
+It intentionally does *not* proxy through our own server: Web3Forms' upstream bot
+protection blocks requests from cloud/server IP ranges (Vercel, AWS, etc.) even with a
+valid key, so a real browser request is required.
 
 1. Visit [web3forms.com](https://web3forms.com) and enter the inbox email that should
    receive submissions. An access key arrives by email instantly.
-2. Copy `.env.example` to `.env.local` and set `WEB3FORMS_ACCESS_KEY` to that key.
-3. On your hosting provider (Vercel, etc.), add the same `WEB3FORMS_ACCESS_KEY`
-   environment variable in the project settings.
+2. Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` to that key.
+3. On your hosting provider (Vercel, etc.), add the same `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`
+   environment variable in the project settings, then trigger a **new deployment**
+   (`NEXT_PUBLIC_` vars are baked in at build time, so a stale build won't pick it up).
 
-Without this key set, the form returns a "not configured" error instead of failing silently.
+Without this key set, the form shows an error instead of failing silently.
 
 ## Scripts
 

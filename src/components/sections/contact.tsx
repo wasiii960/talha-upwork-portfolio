@@ -20,15 +20,27 @@ export function Contact() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
+    if (data.get("botcheck")) {
+      setStatus("sent");
+      return;
+    }
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setStatus("error");
+      return;
+    }
+
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New project inquiry from ${data.get("name")}`,
           name: data.get("name"),
           email: data.get("email"),
           message: data.get("message"),
-          botcheck: data.get("botcheck"),
         }),
       });
       const result = await response.json();
