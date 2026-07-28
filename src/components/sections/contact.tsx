@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Loader2, Mail, Send } from "lucide-react";
+import { AlertCircle, Check, Loader2, Send } from "lucide-react";
 
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
@@ -9,24 +9,35 @@ import { CopyEmailButton } from "@/components/copy-email-button";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/brand-icons";
 import { siteConfig } from "@/lib/site";
 
-type Status = "idle" | "submitting" | "sent";
+type Status = "idle" | "submitting" | "sent" | "error";
 
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
     const form = e.currentTarget;
     const data = new FormData(form);
-    const subject = encodeURIComponent(`Project inquiry from ${data.get("name")}`);
-    const body = encodeURIComponent(
-      `${data.get("message")}\n\n— ${data.get("name")} (${data.get("email")})`
-    );
-    window.setTimeout(() => {
-      window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          message: data.get("message"),
+          botcheck: data.get("botcheck"),
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) throw new Error(result.message);
       setStatus("sent");
-    }, 600);
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -108,7 +119,21 @@ export function Contact() {
                     placeholder="What are you building, and what problem are you trying to solve?"
                   />
                 </div>
-                <Button type="submit" variant="accent" size="lg" disabled={status !== "idle"} className="w-full">
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  aria-hidden="true"
+                />
+                <Button
+                  type="submit"
+                  variant="accent"
+                  size="lg"
+                  disabled={status === "submitting" || status === "sent"}
+                  className="w-full"
+                >
                   {status === "idle" && (
                     <>
                       Send Message <Send className="size-4" />
@@ -116,18 +141,34 @@ export function Contact() {
                   )}
                   {status === "submitting" && (
                     <>
-                      Opening your email client <Loader2 className="size-4 animate-spin" />
+                      Sending <Loader2 className="size-4 animate-spin" />
                     </>
                   )}
                   {status === "sent" && (
                     <>
-                      Ready to send <Mail className="size-4" />
+                      Message Sent <Check className="size-4" />
+                    </>
+                  )}
+                  {status === "error" && (
+                    <>
+                      Try Again <Send className="size-4" />
                     </>
                   )}
                 </Button>
-                <p className="text-center text-xs text-muted-foreground">
-                  This opens your email client with the message pre-filled to {siteConfig.email}.
-                </p>
+                {status === "sent" ? (
+                  <p className="text-center text-xs text-emerald-400">
+                    Thanks — your message is on its way. I&apos;ll reply within one business day.
+                  </p>
+                ) : status === "error" ? (
+                  <p className="flex items-center justify-center gap-1.5 text-center text-xs text-red-400">
+                    <AlertCircle className="size-3.5" /> Something went wrong. Please try again or
+                    email {siteConfig.email} directly.
+                  </p>
+                ) : (
+                  <p className="text-center text-xs text-muted-foreground">
+                    Sent directly to {siteConfig.email}.
+                  </p>
+                )}
               </div>
             </form>
           </Reveal>

@@ -1,4 +1,4 @@
-# Talha Anjum — Enterprise Java Backend Engineer Portfolio
+# Talha Rehman Khan — Enterprise Java Backend Engineer Portfolio
 
 A premium, SaaS-style portfolio for a Senior Java Backend Engineer — built to feel like a
 boutique software consultancy (Linear / Stripe / Vercel inspired) rather than a traditional
@@ -38,8 +38,22 @@ src/
 
 ## Content
 
-All 6 engineering case studies (`src/data/case-studies.ts`) are anonymised — no real client
+All engineering case studies (`src/data/case-studies.ts`) are anonymised — no real client
 names, logos, or confidential details are included, per the site's stated policy.
+
+## Contact Form
+
+The contact form (`src/components/sections/contact.tsx`) posts to `/api/contact`
+(`src/app/api/contact/route.ts`), which forwards the submission via
+[Web3Forms](https://web3forms.com) — free, no account required.
+
+1. Visit [web3forms.com](https://web3forms.com) and enter the inbox email that should
+   receive submissions. An access key arrives by email instantly.
+2. Copy `.env.example` to `.env.local` and set `WEB3FORMS_ACCESS_KEY` to that key.
+3. On your hosting provider (Vercel, etc.), add the same `WEB3FORMS_ACCESS_KEY`
+   environment variable in the project settings.
+
+Without this key set, the form returns a "not configured" error instead of failing silently.
 
 ## Scripts
 
