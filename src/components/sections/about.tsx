@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Code2, Layers, ShieldCheck, Target } from "lucide-react";
 
 import { Reveal } from "@/components/motion/reveal";
@@ -33,15 +34,15 @@ export function About() {
         <div className="grid gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <Reveal>
             <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-border-strong bg-gradient-to-br from-surface-2 to-surface">
-              <div className="absolute inset-0 bg-grid opacity-40" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex size-28 items-center justify-center rounded-full border border-border-strong bg-white/5 text-4xl font-semibold text-muted">
-                  {siteConfig.name
-                    .split(" ")
-                    .map((part) => part[0])
-                    .join("")}
-                </div>
-              </div>
+              <Image
+                src="/talha-rehman-khan.jpg"
+                alt={siteConfig.name}
+                fill
+                priority
+                className="object-cover object-top"
+                sizes="(min-width: 1024px) 384px, 90vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 border-t border-border bg-surface/80 p-5 backdrop-blur-sm">
                 <p className="text-sm font-medium text-foreground">{siteConfig.name}</p>
                 <p className="text-xs text-muted">{siteConfig.role}</p>
