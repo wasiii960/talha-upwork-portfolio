@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "Talha Rehman Khan",
+  name: "Talha Khan",
   role: "Senior Java Backend Engineer",
-  title: "Talha Rehman Khan — Enterprise Java Backend Engineer",
+  title: "Talha Khan — Enterprise Java Backend Engineer",
   description:
     "Senior Java backend engineer specializing in scalable healthcare systems, enterprise integrations, REST APIs, distributed systems, and cloud-ready architectures.",
-  url: "https://talharehmankhan.dev",
+  url: "https://talhakhan.dev",
   email: "talharehman01997@gmail.com",
   location: "Remote — Available Worldwide",
   yearsExperience: 9,

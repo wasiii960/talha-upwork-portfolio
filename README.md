@@ -1,4 +1,4 @@
-# Talha Rehman Khan — Enterprise Java Backend Engineer Portfolio
+# Talha Khan — Enterprise Java Backend Engineer Portfolio
 
 A premium, SaaS-style portfolio for a Senior Java Backend Engineer — built to feel like a
 boutique software consultancy (Linear / Stripe / Vercel inspired) rather than a traditional
