@@ -19,7 +19,6 @@ import {
   CommandInput,
   CommandList,
 } from "@/components/ui/command";
-import { GithubIcon, LinkedinIcon } from "@/components/icons/brand-icons";
 import { caseStudies } from "@/data/case-studies";
 import { siteConfig } from "@/lib/site";
 
@@ -98,22 +97,13 @@ export function CommandPalette() {
             <FileText className="size-4 text-muted" /> Download Resume
           </CommandItem>
           <CommandItem
-            value="github"
+            value="upwork"
             onSelect={() => {
               setOpen(false);
-              window.open(siteConfig.social.github, "_blank");
+              window.open(siteConfig.social.upwork, "_blank");
             }}
           >
-            <GithubIcon className="size-4 text-muted" /> Open GitHub
-          </CommandItem>
-          <CommandItem
-            value="linkedin"
-            onSelect={() => {
-              setOpen(false);
-              window.open(siteConfig.social.linkedin, "_blank");
-            }}
-          >
-            <LinkedinIcon className="size-4 text-muted" /> Open LinkedIn
+            <Briefcase className="size-4 text-muted" /> Open Upwork
           </CommandItem>
         </CommandGroup>
       </CommandList>

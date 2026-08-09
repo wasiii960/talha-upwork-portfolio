@@ -9,9 +9,7 @@ export const siteConfig = {
   location: "Remote — Available Worldwide",
   yearsExperience: 9,
   social: {
-    linkedin: "https://www.linkedin.com/in/talha-rehman-khan",
-    github: "https://github.com/talha-rehman-khan",
-    upwork: "https://www.upwork.com/freelancers/talharehmankhan",
+    upwork: "https://www.upwork.com/freelancers/~017eb6a5037aca0c1d?mp_source=share",
   },
   resumeUrl: "/resume.pdf",
 } as const;

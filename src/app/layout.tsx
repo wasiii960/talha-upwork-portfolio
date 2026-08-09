@@ -67,7 +67,7 @@ const personJsonLd = {
   description: siteConfig.description,
   url: siteConfig.url,
   email: `mailto:${siteConfig.email}`,
-  sameAs: [siteConfig.social.linkedin, siteConfig.social.github, siteConfig.social.upwork],
+  sameAs: [siteConfig.social.upwork],
   knowsAbout: [
     "Java",
     "Spring Boot",

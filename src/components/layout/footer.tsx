@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Mail } from "lucide-react";
 
 import { navLinks, siteConfig } from "@/lib/site";
-import { GithubIcon, LinkedinIcon } from "@/components/icons/brand-icons";
 
 export function Footer() {
   return (
@@ -38,16 +37,6 @@ export function Footer() {
             <p className="text-sm font-medium text-foreground">Connect</p>
             <ul className="mt-4 space-y-3">
               <li>
-                <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" className="text-sm text-muted transition-colors hover:text-foreground">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href={siteConfig.social.github} target="_blank" rel="noreferrer" className="text-sm text-muted transition-colors hover:text-foreground">
-                  GitHub
-                </a>
-              </li>
-              <li>
                 <a href={siteConfig.social.upwork} target="_blank" rel="noreferrer" className="text-sm text-muted transition-colors hover:text-foreground">
                   Upwork
                 </a>
@@ -61,14 +50,6 @@ export function Footer() {
               <li>
                 <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground">
                   <Mail className="size-3.5" /> {siteConfig.email}
-                </a>
-              </li>
-              <li className="flex items-center gap-3 pt-1 text-muted">
-                <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-foreground">
-                  <LinkedinIcon className="size-4" />
-                </a>
-                <a href={siteConfig.social.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="transition-colors hover:text-foreground">
-                  <GithubIcon className="size-4" />
                 </a>
               </li>
             </ul>

@@ -6,7 +6,6 @@ import { AlertCircle, Check, Loader2, Send } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { CopyEmailButton } from "@/components/copy-email-button";
-import { GithubIcon, LinkedinIcon } from "@/components/icons/brand-icons";
 import { siteConfig } from "@/lib/site";
 
 type Status = "idle" | "submitting" | "sent" | "error";
@@ -69,16 +68,6 @@ export function Contact() {
             <div className="mt-8 space-y-3">
               <CopyEmailButton />
               <div className="flex items-center gap-3 pt-2">
-                <Button asChild variant="outline" size="icon">
-                  <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                    <LinkedinIcon className="size-4" />
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="icon">
-                  <a href={siteConfig.social.github} target="_blank" rel="noreferrer" aria-label="GitHub">
-                    <GithubIcon className="size-4" />
-                  </a>
-                </Button>
                 <Button asChild variant="outline" size="icon">
                   <a href={siteConfig.social.upwork} target="_blank" rel="noreferrer" aria-label="Upwork">
                     <span className="text-xs font-bold">Up</span>
