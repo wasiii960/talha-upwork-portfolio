@@ -58,7 +58,7 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col-reverse items-center gap-4 border-t border-border pt-8 text-xs text-muted-foreground sm:flex-row sm:justify-between">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-          <p>Designed &amp; engineered for enterprise-grade backend work.</p>
+          <p>Designed &amp; engineered for production-grade AI/ML systems.</p>
         </div>
       </div>
     </footer>

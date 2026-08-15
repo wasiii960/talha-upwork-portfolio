@@ -18,12 +18,12 @@ export function FeaturedCaseStudies() {
             Engineering Case Studies
           </h2>
           <p className="mt-4 text-balance text-muted">
-            Anonymised deep-dives into enterprise systems I&apos;ve architected and shipped —
+            Anonymised deep-dives into production AI/ML systems I&apos;ve built and shipped —
             the business problem, the engineering decisions, and the measurable outcome.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2">
           {featured.map((study, i) => (
             <CaseStudyCard key={study.slug} study={study} index={i} />
           ))}

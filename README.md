@@ -1,8 +1,8 @@
-# Talha Khan — Enterprise Java Backend Engineer Portfolio
+# Talha Khan — AI/ML Engineer Portfolio
 
-A premium, SaaS-style portfolio for a Senior Java Backend Engineer — built to feel like a
-boutique software consultancy (Linear / Stripe / Vercel inspired) rather than a traditional
-developer portfolio.
+A premium, SaaS-style portfolio for an AI/ML Engineer specializing in computer vision, edge
+AI, and industrial data engineering — built to feel like a boutique software consultancy
+(Linear / Stripe / Vercel inspired) rather than a traditional developer portfolio.
 
 ## Tech Stack
 
@@ -39,7 +39,8 @@ src/
 ## Content
 
 All engineering case studies (`src/data/case-studies.ts`) are anonymised — no real client
-names, logos, or confidential details are included, per the site's stated policy.
+names, logos, or confidential details are included, per the site's stated policy. Case study
+images (hero, architecture, and results) live in `public/case-studies/`.
 
 ## Contact Form
 

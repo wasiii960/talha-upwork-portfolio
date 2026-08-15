@@ -1,85 +1,84 @@
 import {
   Boxes,
+  Camera,
   Cloud,
   Code2,
+  Cpu,
   Database,
   FlaskConical,
-  GitBranch,
   Layers,
   Network,
-  ServerCog,
   ShieldCheck,
-  TerminalSquare,
   Workflow,
 } from "lucide-react";
 
 export const trustLogos = [
-  "Java",
-  "Spring Boot",
-  "Hibernate",
-  "Oracle",
-  "PostgreSQL",
+  "Python",
+  "TensorFlow",
+  "PyTorch",
+  "OpenCV",
+  "XGBoost",
+  "Scikit-learn",
+  "Pandas",
+  "PyArrow",
   "Docker",
-  "Kubernetes",
-  "REST APIs",
-  "React",
-  "Angular",
   "AWS",
-  "Git",
-  "JUnit",
-  "Mockito",
-  "Kafka",
-  "RabbitMQ",
+  "PostgreSQL",
+  "Raspberry Pi",
+  "ESP32",
+  "Power BI",
+  "Apache Spark",
+  "RHEL",
 ];
 
 export const services = [
   {
-    icon: ServerCog,
-    title: "Enterprise Java Development",
+    icon: Camera,
+    title: "Computer Vision & Edge AI",
     description:
-      "Production-grade Java 17/21 applications built for correctness, testability, and long-term maintainability.",
-  },
-  {
-    icon: Layers,
-    title: "Spring Boot APIs",
-    description:
-      "REST and event-driven APIs designed around clear domain boundaries, versioning strategy, and contract testing.",
-  },
-  {
-    icon: Network,
-    title: "Backend Architecture",
-    description:
-      "System architecture for services that need to scale — from monoliths to event-driven microservices.",
-  },
-  {
-    icon: Boxes,
-    title: "System Design",
-    description:
-      "Pragmatic architecture decisions grounded in real constraints: consistency, throughput, latency, and cost.",
+      "Camera-based detection and classification systems deployed on edge hardware, with quantized inference tuned for real production cycle-time constraints.",
   },
   {
     icon: FlaskConical,
-    title: "Performance Optimisation",
+    title: "Predictive Machine Learning",
     description:
-      "Profiling, load testing, and tuning JVM, database, and messaging layers to eliminate real bottlenecks.",
+      "XGBoost and scikit-learn models for anomaly detection, predictive maintenance, and classification on structured and time-series sensor data.",
+  },
+  {
+    icon: Boxes,
+    title: "Robotics & Embedded Systems",
+    description:
+      "Camera-guided control systems — image processing, PID control — integrated with microcontrollers and motor hardware, built from scratch.",
   },
   {
     icon: Database,
-    title: "Database Design",
+    title: "Industrial Data Engineering",
     description:
-      "Schema design, indexing strategy, and query optimisation across PostgreSQL, Oracle, and distributed data stores.",
+      "High-throughput ETL pipelines converting raw sensor data to compressed, queryable formats at 100+ machine scale, with zero added hardware cost.",
   },
   {
-    icon: Cloud,
-    title: "Cloud Migration",
+    icon: Network,
+    title: "PLC & Hardware Integration",
     description:
-      "Phased, low-risk migrations from on-premises infrastructure to AWS with infrastructure-as-code from day one.",
+      "TCP/IP and serial integration between AI inference running on edge devices and industrial control systems — PLCs, motor drivers, microcontrollers.",
+  },
+  {
+    icon: Cpu,
+    title: "Model Optimization & Deployment",
+    description:
+      "INT8 quantization, inference profiling, and deployment for latency-constrained edge environments with no GPU and no network dependency.",
+  },
+  {
+    icon: Workflow,
+    title: "Analytics & Reporting Pipelines",
+    description:
+      "Distributed data processing feeding live dashboards and real-time alerts into the tools operations teams already use — Power BI, Microsoft Teams.",
   },
   {
     icon: ShieldCheck,
-    title: "Technical Consulting",
+    title: "AI Feasibility & Consulting",
     description:
-      "Architecture reviews, code audits, and technical due diligence for teams that need an outside expert opinion.",
+      "Feasibility studies, architecture reviews, and technical due diligence for teams evaluating a new computer vision or ML initiative.",
   },
 ];
 
@@ -87,32 +86,32 @@ export const processSteps = [
   {
     title: "Discovery",
     description:
-      "Deep-dive into business goals, constraints, and existing systems before a single line of code is written.",
+      "Understanding the production constraint, available data, and hardware environment before any model work begins.",
   },
   {
-    title: "Architecture",
+    title: "Data & Architecture",
     description:
-      "Define system boundaries, data models, and technology choices with clear tradeoffs documented up front.",
+      "Defining the data pipeline, model architecture, and edge/on-prem deployment target, with tradeoffs documented up front.",
   },
   {
     title: "Implementation",
     description:
-      "Iterative delivery in small, reviewable increments with continuous integration from the first commit.",
+      "Iterative model development and pipeline build in small, testable increments against real production data.",
   },
   {
-    title: "Testing",
+    title: "Validation",
     description:
-      "Unit, integration, and load testing built in throughout — not bolted on at the end of the project.",
+      "Evaluating results against real production conditions and domain-expert review — not just held-out accuracy in a notebook.",
   },
   {
     title: "Deployment",
     description:
-      "Zero-downtime rollouts, infrastructure-as-code, and observability wired in before go-live, not after.",
+      "Edge or on-prem rollout with quantization, monitoring, and fallback behavior wired in before go-live, not after.",
   },
   {
     title: "Support",
     description:
-      "Post-launch monitoring, incident response, and iterative hardening based on real production behaviour.",
+      "Post-launch monitoring, retraining cadence, and iterative hardening based on real production behaviour.",
   },
 ];
 
@@ -120,69 +119,69 @@ export const techGrid = [
   {
     category: "Languages",
     icon: Code2,
-    items: ["Java 17/21", "SQL", "TypeScript", "Bash"],
+    items: ["Python", "MATLAB", "SQL"],
   },
   {
-    category: "Frameworks",
+    category: "Deep Learning",
     icon: Layers,
-    items: ["Spring Boot", "Spring Cloud", "Hibernate", "Spring WebFlux"],
+    items: ["TensorFlow", "PyTorch", "Keras"],
   },
   {
-    category: "Databases",
-    icon: Database,
-    items: ["PostgreSQL", "Oracle", "Redis", "MongoDB"],
+    category: "Computer Vision",
+    icon: Camera,
+    items: ["OpenCV", "Picamera2", "VGG-19 CNN", "Image Processing"],
   },
   {
-    category: "Cloud",
-    icon: Cloud,
-    items: ["AWS (EKS, RDS, S3)", "Terraform", "Docker", "Kubernetes"],
-  },
-  {
-    category: "Messaging",
-    icon: Workflow,
-    items: ["Apache Kafka", "RabbitMQ", "Event-driven design"],
-  },
-  {
-    category: "Testing",
+    category: "Classical ML",
     icon: FlaskConical,
-    items: ["JUnit 5", "Mockito", "Testcontainers", "Gatling"],
+    items: ["XGBoost", "Scikit-learn", "SciPy"],
   },
   {
-    category: "DevOps",
-    icon: TerminalSquare,
-    items: ["GitHub Actions", "Jenkins", "Prometheus", "Grafana"],
+    category: "Data Engineering",
+    icon: Database,
+    items: ["PyArrow", "Pandas", "Dask", "Apache Spark"],
   },
   {
-    category: "Architecture",
-    icon: GitBranch,
-    items: ["Microservices", "Event Sourcing", "Domain-Driven Design", "CQRS"],
+    category: "Edge & Robotics",
+    icon: Cpu,
+    items: ["Raspberry Pi", "ESP32", "Jetson Xavier/Nano", "PLC / TCP-IP"],
+  },
+  {
+    category: "Infrastructure",
+    icon: Cloud,
+    items: ["Docker", "AWS", "RHEL", "PostgreSQL"],
+  },
+  {
+    category: "Reporting & MLOps",
+    icon: Workflow,
+    items: ["Power BI", "MLflow", "Streamlit", "Microsoft Teams"],
   },
 ];
 
 export const testimonials = [
   {
     quote:
-      "The architecture he designed for our data integration platform handled scale we hadn't even planned for yet. Communication was clear at every step, and the code quality made our whole team's job easier.",
-    name: "Director of Engineering",
-    role: "Healthcare Technology Company",
+      "The vision system he built reads serial numbers inside our robot's cycle time with zero slack — something we weren't sure was even possible on Raspberry Pi-class hardware. It's been running in production without a single unplanned stop.",
+    name: "Production Systems Manager",
+    role: "Automotive Manufacturing Plant",
   },
   {
     quote:
-      "We brought him in to fix a system nobody wanted to touch. Six months later it was the most stable service in our stack, and our team actually understood how it worked.",
-    name: "VP of Product",
-    role: "B2B SaaS Platform",
+      "We asked for an AGV built from off-the-shelf trolleys and a tight budget. What we got was a fully autonomous system with PID-tuned tracking that our own engineers could tune for new trolley sizes without touching the code.",
+    name: "Manufacturing Engineering Lead",
+    role: "Automotive Production Line",
   },
   {
     quote:
-      "Rare combination of deep technical skill and genuine business judgment. He pushed back on requirements that didn't make sense and explained tradeoffs in plain language.",
-    name: "CTO",
-    role: "Enterprise Logistics Company",
+      "Our storage bill for time-series data was growing every month with no end in sight. He redesigned the pipeline around Parquet and cut it by over 90% while making the data faster to search than it had ever been.",
+    name: "Plant Data Infrastructure Lead",
+    role: "Industrial Manufacturing",
   },
   {
     quote:
-      "Our cloud migration was the thing we'd been avoiding for two years. He scoped it, de-risked it, and delivered it with zero downtime and under budget.",
-    name: "Head of Infrastructure",
-    role: "Financial Services Firm",
+      "The anomaly detection system catches servo issues weeks before they would have caused a stoppage. Maintenance actually trusts the alerts now because they show up in Teams with real context, not a dashboard nobody checks.",
+    name: "Maintenance Operations Manager",
+    role: "Fuel-Cell Component Manufacturing",
   },
 ];
 
@@ -190,12 +189,12 @@ export const faqs = [
   {
     question: "What kind of projects do you take on?",
     answer:
-      "I focus on backend-heavy engagements: enterprise Java/Spring systems, API design and integration, system architecture, performance issues, and cloud migrations. I'm especially effective on projects involving legacy modernisation, healthcare or regulated data systems, and high-throughput distributed systems.",
+      "I focus on applied AI/ML engagements: computer vision and edge AI deployment, predictive maintenance and anomaly detection on time-series data, robotics/embedded control systems, and large-scale industrial data engineering. I'm especially effective on projects that need a model to actually run reliably in a real environment — on constrained edge hardware, integrated with existing industrial equipment, or against messy real-world data — not just a notebook that scores well on a held-out set.",
   },
   {
     question: "Do you work with existing teams or as a sole contractor?",
     answer:
-      "Both. I've led backend workstreams inside larger teams, embedded as a senior IC on an existing squad, and delivered entire systems solo for smaller clients. I adapt to your team's existing process rather than imposing my own.",
+      "Both. I've led AI/ML workstreams solo end-to-end — from data pipeline through edge deployment — and collaborated closely with hardware, domain expert, and production teams on projects that needed cross-functional input. I adapt to your team's existing process rather than imposing my own.",
   },
   {
     question: "How do you handle confidentiality and NDAs?",
@@ -205,21 +204,21 @@ export const faqs = [
   {
     question: "What does your engagement process look like?",
     answer:
-      "Most engagements start with a short discovery call to understand the problem, followed by a scoped proposal covering architecture approach, timeline, and milestones. For larger systems, I typically deliver an architecture document before writing implementation code.",
+      "Most engagements start with a short discovery call to understand the data, hardware constraints, and production environment. For projects with a hardware or edge-deployment component, I typically validate feasibility on real (or representative) data before committing to a full build.",
   },
   {
-    question: "Can you work within our existing tech stack even if it's not ideal?",
+    question: "Can you deploy models to edge or on-premises hardware?",
     answer:
-      "Yes — most real-world engagements involve legacy constraints. I focus on pragmatic, incremental improvement (strangler-fig patterns, phased migrations) rather than insisting on a rewrite unless a rewrite is genuinely the right call.",
+      "Yes — a large part of my background is specifically edge and on-prem deployment: quantized inference on Raspberry Pi, integration with PLCs and microcontrollers over TCP/IP and serial, and pipelines that run on existing on-premises servers rather than requiring new cloud infrastructure.",
   },
   {
     question: "How do you price engagements?",
     answer:
-      "Depending on scope, I work on fixed-price milestones for well-defined projects or hourly/weekly retainers for ongoing architecture and development work. I'll recommend the right model after understanding your project's shape during discovery.",
+      "Depending on scope, I work on fixed-price milestones for well-defined projects or hourly/weekly retainers for ongoing model development and support. I'll recommend the right model after understanding your project's shape during discovery.",
   },
   {
     question: "What's your availability and time zone coverage?",
     answer:
-      "I work async-first and maintain significant overlap with US and European business hours. Response times on active engagements are typically within a few hours.",
+      "I work async-first and maintain significant overlap with US, European, and Asia-Pacific business hours. Response times on active engagements are typically within a few hours.",
   },
 ];

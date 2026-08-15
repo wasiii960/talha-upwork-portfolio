@@ -34,7 +34,7 @@ export function Hero() {
           className="mb-8 inline-flex items-center gap-2 rounded-full border border-border-strong bg-white/[0.03] px-4 py-1.5 text-xs text-muted"
         >
           <Sparkles className="size-3.5 text-accent" />
-          Available for select enterprise engagements
+          Available for select AI/ML engagements
         </motion.div>
 
         <motion.h1
@@ -43,10 +43,10 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
           className="text-balance text-4xl font-semibold leading-[1.08] tracking-tight sm:text-6xl md:text-7xl"
         >
-          Building Enterprise Software
+          Building AI Systems
           <br />
           <span className="bg-gradient-to-br from-white via-white to-slate-400 bg-clip-text text-transparent">
-            That Solves Real Business Problems.
+            That Run On The Factory Floor.
           </span>
         </motion.h1>
 
@@ -56,8 +56,9 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 max-w-2xl text-balance text-base leading-relaxed text-muted sm:text-lg"
         >
-          {siteConfig.role} specialising in scalable healthcare systems, enterprise
-          integrations, REST APIs, distributed systems, and cloud-ready architectures.
+          {siteConfig.role} specializing in computer vision, edge deployment on Raspberry
+          Pi and PLC-integrated hardware, predictive maintenance, and large-scale
+          industrial data pipelines.
         </motion.p>
 
         <motion.div
@@ -83,9 +84,9 @@ export function Hero() {
           className="mt-16 grid w-full max-w-2xl grid-cols-3 gap-6 border-t border-border pt-8"
         >
           {[
-            { label: "Years Experience", value: `${siteConfig.yearsExperience}+` },
-            { label: "Enterprise Systems Shipped", value: "20+" },
-            { label: "Facilities / Services Integrated", value: "250+" },
+            { label: "Years AI/ML Experience", value: `${siteConfig.yearsExperience}+` },
+            { label: "Machines Monitored in Production", value: "500+" },
+            { label: "Edge/PLC Devices Integrated", value: "100+" },
           ].map((stat) => (
             <div key={stat.label}>
               <p className="text-2xl font-semibold tracking-tight sm:text-3xl">{stat.value}</p>

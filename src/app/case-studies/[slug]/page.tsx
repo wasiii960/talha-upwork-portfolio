@@ -171,7 +171,21 @@ export default async function CaseStudyPage({
         </Section>
 
         <Section title="Architecture Diagram">
-          <ArchitectureDiagram layers={study.diagramLayers} />
+          <div className="space-y-6">
+            {study.architectureImage && (
+              <div className="relative overflow-hidden rounded-2xl border border-border-strong">
+                <Image
+                  src={study.architectureImage}
+                  alt={`${study.title} architecture diagram`}
+                  width={1376}
+                  height={768}
+                  className="w-full object-cover"
+                  sizes="(min-width: 1024px) 896px, 100vw"
+                />
+              </div>
+            )}
+            <ArchitectureDiagram layers={study.diagramLayers} />
+          </div>
         </Section>
 
         <Section title="System Design">
@@ -259,6 +273,21 @@ export default async function CaseStudyPage({
             </table>
           </div>
         </Section>
+
+        {study.closingImage && (
+          <Section title="Deployed System">
+            <div className="relative overflow-hidden rounded-2xl border border-border-strong">
+              <Image
+                src={study.closingImage}
+                alt={`${study.title} in production`}
+                width={1376}
+                height={768}
+                className="w-full object-cover"
+                sizes="(min-width: 1024px) 896px, 100vw"
+              />
+            </div>
+          </Section>
+        )}
 
         <Section title="Results" icon={<TrendingUp className="size-4 text-accent" />}>
           <div className="grid gap-4 sm:grid-cols-3">

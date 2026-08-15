@@ -1,13 +1,13 @@
 export const siteConfig = {
   name: "Talha Khan",
-  role: "Senior Java Backend Engineer",
-  title: "Talha Khan — Enterprise Java Backend Engineer",
+  role: "AI/ML Engineer — Computer Vision & Edge AI",
+  title: "Talha Khan — AI/ML Engineer | Computer Vision & Industrial AI",
   description:
-    "Senior Java backend engineer specializing in scalable healthcare systems, enterprise integrations, REST APIs, distributed systems, and cloud-ready architectures.",
+    "AI/ML engineer specializing in computer vision, edge AI deployment, and large-scale industrial data engineering — building production systems for manufacturing automation, predictive maintenance, and real-time analytics.",
   url: "https://talhakhan.dev",
   email: "talharehman01997@gmail.com",
   location: "Remote — Available Worldwide",
-  yearsExperience: 9,
+  yearsExperience: 4,
   social: {
     upwork: "https://www.upwork.com/freelancers/~017eb6a5037aca0c1d?mp_source=share",
   },

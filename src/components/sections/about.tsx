@@ -7,23 +7,23 @@ import { siteConfig } from "@/lib/site";
 const pillars = [
   {
     icon: Target,
-    title: "Problem-first thinking",
-    description: "Every architecture decision starts from the business problem, not the technology I like best.",
+    title: "Constraint-first modeling",
+    description: "Cycle time, edge hardware limits, and shop-floor conditions shape the model — not the other way around.",
   },
   {
     icon: Layers,
-    title: "Systems that scale",
-    description: "Designing for the load you'll actually have — 6 months out, not a hypothetical 10 years out.",
+    title: "Edge-ready by design",
+    description: "Quantized inference, offline-first architecture — models built to run reliably on Raspberry Pi and PLC-integrated hardware.",
   },
   {
     icon: ShieldCheck,
     title: "Production-grade by default",
-    description: "Testing, observability, and rollback plans are part of the build, not an afterthought.",
+    description: "Monitoring, alerting, and fallback behavior are part of the build from day one, not bolted on after a pilot.",
   },
   {
     icon: Code2,
-    title: "Code that outlives me",
-    description: "Clear, well-documented systems the next engineer can pick up without a handoff call.",
+    title: "Results teams actually use",
+    description: "Dashboards and alerts land in the tools maintenance and production teams already work in — not a notebook nobody opens.",
   },
 ];
 
@@ -54,26 +54,29 @@ export function About() {
             <Reveal>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">About</p>
               <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">
-                An engineering mindset, not just a tech stack.
+An engineering mindset, not just a model.
               </h2>
             </Reveal>
 
             <Reveal delay={0.1}>
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
                 <p>
-                  I&apos;m a backend engineer with {siteConfig.yearsExperience}+ years building systems that
-                  enterprises actually depend on — healthcare data platforms, financial transaction
-                  systems, and high-throughput integration layers that can&apos;t afford to go down.
+                  I&apos;m an AI/ML engineer with {siteConfig.yearsExperience}+ years building computer
+                  vision and machine learning systems that run in real production environments —
+                  on a fuel-cell manufacturing line, on edge devices wired directly into PLCs, and
+                  on servers processing hundreds of gigabytes of sensor data a day.
                 </p>
                 <p>
-                  My background is in solving problems that don&apos;t have a clean textbook answer:
-                  legacy systems that need modernising without downtime, integrations across
-                  incompatible vendors, and architectures that have to hold up under real,
-                  unpredictable production load.
+                  My background is in problems that don&apos;t have a clean off-the-shelf answer:
+                  quantizing a CNN to fit inside a 3-second robot cycle on a Raspberry Pi, building
+                  an autonomous vehicle from scratch with camera-based PID control, and turning
+                  500+ motors&apos; worth of noisy time-series data into an early-warning system
+                  maintenance teams actually trust.
                 </p>
                 <p>
-                  I care less about using the newest framework and more about whether the system
-                  will still make sense to the engineer maintaining it two years from now.
+                  I care less about chasing the newest model architecture and more about whether
+                  the system keeps working reliably on a shop floor, with real lighting, real
+                  hardware constraints, and zero tolerance for downtime.
                 </p>
               </div>
             </Reveal>
