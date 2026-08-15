@@ -11,7 +11,7 @@ export function ProcessTimeline() {
             Development Process
           </h2>
           <p className="mt-4 text-balance text-muted">
-            A consistent, transparent process regardless of project size — so you always know
+            A consistent, transparent process regardless of project size, so you always know
             what&apos;s happening and why.
           </p>
         </Reveal>

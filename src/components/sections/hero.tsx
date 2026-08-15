@@ -73,7 +73,9 @@ export function Hero() {
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <Link href="/#contact">Hire Me</Link>
+            <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
+              Book a Call
+            </a>
           </Button>
         </motion.div>
 

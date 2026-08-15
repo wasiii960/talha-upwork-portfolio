@@ -158,7 +158,7 @@ export function Contact() {
                 </Button>
                 {status === "sent" ? (
                   <p className="text-center text-xs text-emerald-400">
-                    Thanks — your message is on its way. I&apos;ll reply within one business day.
+                    Thanks, your message is on its way. I&apos;ll reply within one business day.
                   </p>
                 ) : status === "error" ? (
                   <p className="flex items-center justify-center gap-1.5 text-center text-xs text-red-400">

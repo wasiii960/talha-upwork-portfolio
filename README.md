@@ -1,7 +1,7 @@
-# Talha Khan — AI/ML Engineer Portfolio
+# Talha Rehman, AI/ML Engineer Portfolio
 
 A premium, SaaS-style portfolio for an AI/ML Engineer specializing in computer vision, edge
-AI, and industrial data engineering — built to feel like a boutique software consultancy
+AI, and industrial data engineering, built to feel like a boutique software consultancy
 (Linear / Stripe / Vercel inspired) rather than a traditional developer portfolio.
 
 ## Tech Stack
@@ -38,14 +38,14 @@ src/
 
 ## Content
 
-All engineering case studies (`src/data/case-studies.ts`) are anonymised — no real client
-names, logos, or confidential details are included, per the site's stated policy. Case study
+All engineering case studies (`src/data/case-studies.ts`) are anonymised, with no real client
+names, logos, or confidential details included, per the site's stated policy. Case study
 images (hero, architecture, and results) live in `public/case-studies/`.
 
 ## Contact Form
 
 The contact form (`src/components/sections/contact.tsx`) submits directly from the
-visitor's browser to [Web3Forms](https://web3forms.com) — free, no account required.
+visitor's browser to [Web3Forms](https://web3forms.com), free, no account required.
 It intentionally does *not* proxy through our own server: Web3Forms' upstream bot
 protection blocks requests from cloud/server IP ranges (Vercel, AWS, etc.) even with a
 valid key, so a real browser request is required.
@@ -61,6 +61,6 @@ Without this key set, the form shows an error instead of failing silently.
 
 ## Scripts
 
-- `npm run dev` — start the dev server
-- `npm run build` — production build
-- `npm run lint` — run ESLint
+- `npm run dev`: start the dev server
+- `npm run build`: production build
+- `npm run lint`: run ESLint

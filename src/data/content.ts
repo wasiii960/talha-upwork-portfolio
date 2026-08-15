@@ -48,7 +48,7 @@ export const services = [
     icon: Boxes,
     title: "Robotics & Embedded Systems",
     description:
-      "Camera-guided control systems — image processing, PID control — integrated with microcontrollers and motor hardware, built from scratch.",
+      "Camera-guided control systems (image processing, PID control) integrated with microcontrollers and motor hardware, built from scratch.",
   },
   {
     icon: Database,
@@ -60,7 +60,7 @@ export const services = [
     icon: Network,
     title: "PLC & Hardware Integration",
     description:
-      "TCP/IP and serial integration between AI inference running on edge devices and industrial control systems — PLCs, motor drivers, microcontrollers.",
+      "TCP/IP and serial integration between AI inference running on edge devices and industrial control systems, including PLCs, motor drivers, and microcontrollers.",
   },
   {
     icon: Cpu,
@@ -72,7 +72,7 @@ export const services = [
     icon: Workflow,
     title: "Analytics & Reporting Pipelines",
     description:
-      "Distributed data processing feeding live dashboards and real-time alerts into the tools operations teams already use — Power BI, Microsoft Teams.",
+      "Distributed data processing feeding live dashboards and real-time alerts into the tools operations teams already use, like Power BI and Microsoft Teams.",
   },
   {
     icon: ShieldCheck,
@@ -101,7 +101,7 @@ export const processSteps = [
   {
     title: "Validation",
     description:
-      "Evaluating results against real production conditions and domain-expert review — not just held-out accuracy in a notebook.",
+      "Evaluating results against real production conditions and domain-expert review, not just held-out accuracy in a notebook.",
   },
   {
     title: "Deployment",
@@ -161,7 +161,7 @@ export const techGrid = [
 export const testimonials = [
   {
     quote:
-      "The vision system he built reads serial numbers inside our robot's cycle time with zero slack — something we weren't sure was even possible on Raspberry Pi-class hardware. It's been running in production without a single unplanned stop.",
+      "The vision system he built reads serial numbers inside our robot's cycle time with zero slack, something we weren't sure was even possible on Raspberry Pi-class hardware. It's been running in production without a single unplanned stop.",
     name: "Production Systems Manager",
     role: "Automotive Manufacturing Plant",
   },
@@ -189,17 +189,17 @@ export const faqs = [
   {
     question: "What kind of projects do you take on?",
     answer:
-      "I focus on applied AI/ML engagements: computer vision and edge AI deployment, predictive maintenance and anomaly detection on time-series data, robotics/embedded control systems, and large-scale industrial data engineering. I'm especially effective on projects that need a model to actually run reliably in a real environment — on constrained edge hardware, integrated with existing industrial equipment, or against messy real-world data — not just a notebook that scores well on a held-out set.",
+      "I focus on applied AI/ML engagements: computer vision and edge AI deployment, predictive maintenance and anomaly detection on time-series data, robotics/embedded control systems, and large-scale industrial data engineering. I'm especially effective on projects that need a model to actually run reliably in a real environment, on constrained edge hardware, integrated with existing industrial equipment, or against messy real-world data, not just a notebook that scores well on a held-out set.",
   },
   {
     question: "Do you work with existing teams or as a sole contractor?",
     answer:
-      "Both. I've led AI/ML workstreams solo end-to-end — from data pipeline through edge deployment — and collaborated closely with hardware, domain expert, and production teams on projects that needed cross-functional input. I adapt to your team's existing process rather than imposing my own.",
+      "Both. I've led AI/ML workstreams solo end-to-end, from data pipeline through edge deployment, and collaborated closely with hardware, domain expert, and production teams on projects that needed cross-functional input. I adapt to your team's existing process rather than imposing my own.",
   },
   {
     question: "How do you handle confidentiality and NDAs?",
     answer:
-      "I sign NDAs as standard practice and treat all client code, data, and business context as confidential by default. The case studies on this site are intentionally anonymised — no client names, logos, or proprietary details are shared.",
+      "I sign NDAs as standard practice and treat all client code, data, and business context as confidential by default. The case studies on this site are intentionally anonymised, with no client names, logos, or proprietary details shared.",
   },
   {
     question: "What does your engagement process look like?",
@@ -209,7 +209,7 @@ export const faqs = [
   {
     question: "Can you deploy models to edge or on-premises hardware?",
     answer:
-      "Yes — a large part of my background is specifically edge and on-prem deployment: quantized inference on Raspberry Pi, integration with PLCs and microcontrollers over TCP/IP and serial, and pipelines that run on existing on-premises servers rather than requiring new cloud infrastructure.",
+      "Yes. A large part of my background is specifically edge and on-prem deployment: quantized inference on Raspberry Pi, integration with PLCs and microcontrollers over TCP/IP and serial, and pipelines that run on existing on-premises servers rather than requiring new cloud infrastructure.",
   },
   {
     question: "How do you price engagements?",

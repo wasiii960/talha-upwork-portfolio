@@ -19,7 +19,7 @@ export default function CaseStudiesPage() {
             AI/ML Engineering Case Studies
           </h1>
           <p className="mt-4 text-balance text-muted">
-            Anonymised deep-dives into production AI/ML systems — the business problem, the
+            Anonymised deep-dives into production AI/ML systems: the business problem, the
             architecture, the engineering decisions, and the measurable outcome.
           </p>
         </Reveal>

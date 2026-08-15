@@ -86,7 +86,9 @@ export function Navbar() {
               </kbd>
             </button>
             <Button asChild size="sm" variant="accent" className="hidden sm:inline-flex">
-              <Link href="/#contact">Hire Me</Link>
+              <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
+                Book a Call
+              </a>
             </Button>
             <button
               className="flex md:hidden size-9 items-center justify-center rounded-full border border-border-strong"
@@ -120,9 +122,14 @@ export function Navbar() {
                 </Link>
               ))}
               <Button asChild variant="accent" className="mt-2 w-full">
-                <Link href="/#contact" onClick={() => setMobileOpen(false)}>
-                  Hire Me
-                </Link>
+                <a
+                  href={siteConfig.calendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Book a Call
+                </a>
               </Button>
             </nav>
           </motion.div>

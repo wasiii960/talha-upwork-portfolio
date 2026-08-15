@@ -11,7 +11,7 @@ export function Services() {
             Services
           </h2>
           <p className="mt-4 text-balance text-muted">
-            End-to-end AI/ML engineering — from data pipeline and model design to edge
+            End-to-end AI/ML engineering, from data pipeline and model design to edge
             deployment and production monitoring.
           </p>
         </Reveal>

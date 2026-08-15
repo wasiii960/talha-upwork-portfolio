@@ -8,12 +8,12 @@ const pillars = [
   {
     icon: Target,
     title: "Constraint-first modeling",
-    description: "Cycle time, edge hardware limits, and shop-floor conditions shape the model — not the other way around.",
+    description: "Cycle time, edge hardware limits, and shop-floor conditions shape the model, not the other way around.",
   },
   {
     icon: Layers,
     title: "Edge-ready by design",
-    description: "Quantized inference, offline-first architecture — models built to run reliably on Raspberry Pi and PLC-integrated hardware.",
+    description: "Quantized inference, offline-first architecture: models built to run reliably on Raspberry Pi and PLC-integrated hardware.",
   },
   {
     icon: ShieldCheck,
@@ -23,7 +23,7 @@ const pillars = [
   {
     icon: Code2,
     title: "Results teams actually use",
-    description: "Dashboards and alerts land in the tools maintenance and production teams already work in — not a notebook nobody opens.",
+    description: "Dashboards and alerts land in the tools maintenance and production teams already work in, not a notebook nobody opens.",
   },
 ];
 
@@ -62,7 +62,7 @@ An engineering mindset, not just a model.
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
                 <p>
                   I&apos;m an AI/ML engineer with {siteConfig.yearsExperience}+ years building computer
-                  vision and machine learning systems that run in real production environments —
+                  vision and machine learning systems that run in real production environments,
                   on a fuel-cell manufacturing line, on edge devices wired directly into PLCs, and
                   on servers processing hundreds of gigabytes of sensor data a day.
                 </p>

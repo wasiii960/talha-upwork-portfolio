@@ -18,7 +18,7 @@ export function FeaturedCaseStudies() {
             Engineering Case Studies
           </h2>
           <p className="mt-4 text-balance text-muted">
-            Anonymised deep-dives into production AI/ML systems I&apos;ve built and shipped —
+            Anonymised deep-dives into production AI/ML systems I&apos;ve built and shipped:
             the business problem, the engineering decisions, and the measurable outcome.
           </p>
         </Reveal>
