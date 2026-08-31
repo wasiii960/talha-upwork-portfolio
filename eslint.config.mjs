@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Separate standalone project with its own lint config.
+    "abdul-rehman-portfolio/**",
   ]),
 ]);
 
