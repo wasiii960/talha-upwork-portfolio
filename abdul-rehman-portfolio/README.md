@@ -1,32 +1,48 @@
-# React + TypeScript + Vite
+# Abdul Rehman — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A single-page portfolio website for Abdul Rehman, a Full-Stack React Developer.
+Built as a standalone project, independent of the other portfolio(s) in this
+repository.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + TypeScript
+- Vite
+- Tailwind CSS v4
+- lucide-react (icons)
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Open [http://localhost:5173](http://localhost:5173).
+
+## Scripts
+
+- `npm run dev`: start the dev server
+- `npm run build`: type-check and produce a production build
+- `npm run preview`: preview the production build locally
+- `npm run lint`: run Oxlint
+
+## Project Structure
+
+```
+src/
+  components/    Navbar, Hero, About, Skills, Projects, Experience, Contact, Footer
+  data/          content.ts — single source of truth for all site copy
+  App.tsx        assembles the page from the section components
+  main.tsx       React entry point
+  index.css      Tailwind entry + base styles
+```
+
+## Content
+
+All copy (name, role, skills, projects, experience, contact links) lives in
+`src/data/content.ts`. Update that file to change the site's content without
+touching any component.
+
+See `solution.md` for the original plan and `progress.md` for the build
+checklist.
